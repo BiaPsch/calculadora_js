@@ -1,0 +1,102 @@
+body{
+    background-color: #cdcbf1;
+}
+
+.container{
+    background-color: #e9e8ff;
+    padding-top: 50px;
+    padding-right: 150px;
+    padding-left: 150px;
+    padding-bottom: 150px;
+    margin-top: 70px;
+    margin-bottom: 70px;
+    margin-left: 100px;
+    margin-right: 100px;
+    border-radius: 40px;
+    /* justify-content: center; */
+}
+
+.menu{
+    text-align: center;
+    justify-content: center;
+}
+
+h2{
+    font-size: 35px;
+    color: #857fc6;
+    padding-top: 10px;
+}
+
+ol{
+    display: inline-flex;
+    justify-content: center;
+    gap: 40px;
+    color: #857fc6;
+    font-weight: 600;
+}
+
+.container-input{
+    margin-top: 20px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input{
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #fbfbff;
+    border: 2px solid #857fc6;
+    width: 300px;
+    outline: none;
+}
+
+::placeholder{
+    color: #857fc6; 
+}
+
+button {
+    margin-top: 15px;
+    padding: 8px 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: #857fc6;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+    letter-spacing: 1px;
+}
+
+button:hover {
+    background-color: #6f6ab0;
+}
+
+.calculadora{
+    margin-top: 20px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.calculadora button {
+    margin-top: 30px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+#instrucao{
+    font-size: 25px;
+    color: #857fc6;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}

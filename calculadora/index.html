@@ -4,10 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
-    <script src="calculadora.js"></script>
+
+    <div class="container">
+        <div class="menu">
+            <h2>Seja bem-vindo(a)! Digite o número da operação que deseja realizar:</h2>
+            <ol>
+                <li>Adição</li>
+                <li>Subtração</li>
+                <li>Multiplicação</li>
+                <li>Divisão</li>
+            </ol>
+        </div>
+
+        <div class="container-input">
+            <input id="inputMenu" placeholder="Digite um número (1-4)">
+            <button id="btnMenu">Prosseguir</button>
+        </div>
+        <div class="calculadora" style="display: none;">
+            <p id="instrucao"></p>
+            <input id="inputNumero">
+            <button id="btnAcao">Enviar</button>
+        </div>
+    </div>
 
 </body>
+<script src="calculadora.js"></script>
 </html>

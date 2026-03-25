@@ -1,56 +1,82 @@
-while (true){
+console.log("JS rodando até aqui");
 
-let opcao = Number(prompt("Seja bem-vindo(a)! Digite o número da operação que deseja realizar: 1. Soma   2. Subtração   3. Multiplicação   4. Divisão"));
+const btnMenu = document.querySelector("#btnMenu");
+const btnAcao = document.querySelector("#btnAcao");
 
-let repetirOperacao = 's';
-if (opcao == 1){
+const menu = document.querySelector(".menu");
+const containerInput = document.querySelector(".container-input");
+const calculadora = document.querySelector(".calculadora");
 
-    while (repetirOperacao == 's'){
-        let numero1 = Number(prompt("Digite o primeiro número: "));
-        let numero2 = Number(prompt("Digite o segundo número: "));
+console.log(menu);
+console.log(calculadora);
 
-        let soma = numero1 + numero2;
+const instrucao = document.querySelector("#instrucao");
+const inputMenu = document.querySelector("#inputMenu");
+const inputNumero = document.querySelector("#inputNumero");
 
-        alert("O resultado da sua soma é:  " + soma);
-        repetirOperacao = prompt("Deseja realizar outra soma? Digite 's' para SIM e 'n' para NÃO");
+let operacao;
+let etapa = 1;
+let numero1;
+let numero2;
+
+console.log("Antes do evento");
+
+btnMenu.addEventListener("click", function () {
+    console.log("Clique detectado!");
+    const valor = inputMenu.value;
+
+    if (valor >= 1 && valor <= 4) {
+        operacao = Number(valor);
+        menu.style.display = "none";
+        containerInput.style.display = "none";
+        calculadora.style.display = "block";
+        instrucao.textContent = "Digite o primeiro número:";
+        inputNumero.placeholder = "Insira um número";
+    } else {
+        alert("Digite um número válido!");
+    }
+});
+
+btnAcao.addEventListener("click", function () {
+    const valor = inputNumero.value;
+
+    if (etapa === 1) {
+        numero1 = Number(valor);
+        instrucao.textContent = "Digite o segundo número:";
+        inputNumero.placeholder = "Insira um número";
+        etapa = 2;
+    } else if (etapa === 2) {
+        numero2 = Number(valor);
+        let resultado;
+
+    if (operacao === 1) {
+        resultado = numero1 + numero2;
+    } else if (operacao === 2) {
+        resultado = numero1 - numero2;
+    } else if (operacao === 3) {
+        resultado = numero1 * numero2;
+    } else if (operacao === 4) {
+        resultado = numero1 / numero2;
     }
 
-}else if (opcao == 2){
+    instrucao.textContent = "Resultado: " + resultado + " | Deseja repetir a operação? (s/n)";
+    inputNumero.placeholder = "Informe se quer repetir";
+    etapa = 3;
+    } else if (etapa === 3) {
+        if (valor.toLowerCase() === "s") {
+            etapa = 1;
+            instrucao.textContent = "Digite o primeiro número:";
+            inputNumero.placeholder = "Insira um número";
+        } else {
+            calculadora.style.display = "none";
+            menu.style.display = "block";
+            containerInput.style.display = "flex";
 
-    while (repetirOperacao == 's'){
-        let numero1 = Number(prompt("Digite o primeiro número: "));
-        let numero2 = Number(prompt("Digite o segundo número: "));
+            inputMenu.value = "";
 
-        let subtracao = numero1 - numero2;
-
-        alert("O resultado da sua subtração é:   " + subtracao);
-        repetirOperacao = prompt("Deseja realizar outra soma? Digite 's' para SIM e 'n' para NÃO"); 
-    }   
-
-}else if (opcao == 3){
-
-    while (repetirOperacao == 's'){
-        let numero1 = Number(prompt("Digite o primeiro número: "));
-        let numero2 = Number(prompt("Digite o segundo número: "));
-
-        let multiplicacao = numero1 * numero2;
-
-        alert("O resultado da sua multiplicação é:   " + multiplicacao);
-        repetirOperacao = prompt("Deseja realizar outra soma? Digite 's' para SIM e 'n' para NÃO"); 
+            etapa = 1;
+        }
     }
-
-}else if (opcao == 4){
-
-    while (repetirOperacao == 's'){    
-        let numero1 = Number(prompt("Digite o primeiro número: "));
-        let numero2 = Number(prompt("Digite o segundo número: "));
-
-        let divisao = numero1 / numero2;
-
-        alert("O resultado da sua divisão é:   " + divisao);
-        repetirOperacao = prompt("Deseja realizar outra soma? Digite 's' para SIM e 'n' para NÃO"); 
-    }
-
-}
-}
+          inputNumero.value = "";
+});
 

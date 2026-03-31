@@ -5,31 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Didact+Gothic&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <div class="container">
         <div class="menu">
-            <h2>Seja bem-vindo(a)! Digite o número da operação que deseja realizar:</h2>
-            <ol>
-                <li>Adição</li>
-                <li>Subtração</li>
-                <li>Multiplicação</li>
-                <li>Divisão</li>
-            </ol>
+            <h2>Seja bem-vindo(a)! Insira as informações abaixo para realizar o seu cálculo:</h2>
         </div>
 
-        <div class="container-input">
-            <input id="inputMenu" placeholder="Digite um número (1-4)">
-            <button id="btnMenu">Prosseguir</button>
+        <div class="calculadora">
+            <input id="inputNumero1" placeholder="Digite o primeiro número">
+
+            <select name="operacoes">
+                <option value="" disabled selected hidden>Selecionar</option>
+                <option value="adicao">+</option>
+                <option value="subvtracao">-</option>
+                <option value="multiplicacao">x</option>
+                <option value="divisao">÷</option>
+            </select>
+
+            <input id="inputNumero" placeholder="Digite o segundo número">
+
+            
         </div>
-        <div class="calculadora" style="display: none;">
-            <p id="instrucao"></p>
-            <input id="inputNumero">
-            <button id="btnAcao">Enviar</button>
+        <button id="btnMenu">Calcular</button>
+
+        <div class="resultado">
+        <h2 id="result">Resultado: </h2>
         </div>
+
     </div>
 
 </body>
-<script src="calculadora.js"></script>
+<!-- <script src="calculadora.js"></script> -->
 </html>

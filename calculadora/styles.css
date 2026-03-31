@@ -13,36 +13,22 @@ body{
     margin-left: 100px;
     margin-right: 100px;
     border-radius: 40px;
-    /* justify-content: center; */
 }
 
 .menu{
-    text-align: center;
-    justify-content: center;
+    text-align: center
 }
 
 h2{
+    font-family: Didact Gothic;
+    font-weight: 500;
     font-size: 35px;
     color: #857fc6;
+    padding: 20px;
     padding-top: 10px;
-}
-
-ol{
-    display: inline-flex;
-    justify-content: center;
-    gap: 40px;
-    color: #857fc6;
-    font-weight: 600;
-}
-
-.container-input{
-    margin-top: 20px;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    background-color: #f4f4fc;
+    border-radius: 10px;
+    opacity: 100%;
 }
 
 input{
@@ -51,16 +37,39 @@ input{
     border-radius: 10px;
     background-color: #fbfbff;
     border: 2px solid #857fc6;
-    width: 300px;
+    width: 200px;
     outline: none;
 }
 
 ::placeholder{
     color: #857fc6; 
+    font-family: Courier Prime;
+}
+
+select{
+    margin-top: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #fbfbff;
+    border: 2px solid #857fc6;
+    width: 125px;
+    outline: none;
+    font-family: Courier Prime;
+}
+
+select:valid {
+  color: #6b6bbd;
+}
+
+option{
+    font-weight: bold;
+    color: #857fc6;
 }
 
 button {
-    margin-top: 15px;
+    margin-top: 30px;
     padding: 8px 20px;
     border-radius: 10px;
     border: none;
@@ -68,7 +77,16 @@ button {
     color: white;
     cursor: pointer;
     transition: 0.2s;
+    justify-content: center;
+    margin-top: 30px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    font-family: Didact Gothic;
     letter-spacing: 1px;
+    font-weight: 500;
+
 }
 
 button:hover {
@@ -81,22 +99,25 @@ button:hover {
     justify-content: center;
     align-items: center;
     display: flex;
-    flex-direction: column;
     gap: 10px;
 }
 
-.calculadora button {
-    margin-top: 30px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    align-items: center;
-    justify-content: center;
+.resultado{
+    margin-top: 60px;
+    background-color: #f1f0fd;
+    padding:10px;
+    border-radius: 30px;
 }
 
-#instrucao{
-    font-size: 25px;
-    color: #857fc6;
-    margin-top: 20px;
-    margin-bottom: 15px;
+#result{
+    background-color: #fefeff;
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
+
+.cinzel{
+  font-family: "Cinzel", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }

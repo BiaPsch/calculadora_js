@@ -25,6 +25,8 @@ btnCalcular.addEventListener("click", function () {
         resultado = numero1 * numero2;
     } else if (operacao === "divisao") {
         resultado = numero1 / numero2;
+    } else if (operacao === "porcentagem") {
+        resultado = (numero2 * numero1) / 100;
     }
 
     result.textContent = "Resultado :  " + resultado;

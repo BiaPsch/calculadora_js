@@ -44,6 +44,7 @@ input{
 ::placeholder{
     color: #857fc6; 
     font-family: Courier Prime;
+    opacity: 80%;
 }
 
 select{
@@ -61,6 +62,7 @@ select{
 
 select:valid {
   color: #6b6bbd;
+  opacity: 80%;
 }
 
 option{

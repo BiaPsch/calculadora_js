@@ -1,82 +1,34 @@
-console.log("JS rodando até aqui");
-
-const btnMenu = document.querySelector("#btnMenu");
-const btnAcao = document.querySelector("#btnAcao");
-
-const menu = document.querySelector(".menu");
-const containerInput = document.querySelector(".container-input");
 const calculadora = document.querySelector(".calculadora");
 
-console.log(menu);
-console.log(calculadora);
-
-const instrucao = document.querySelector("#instrucao");
-const inputMenu = document.querySelector("#inputMenu");
-const inputNumero = document.querySelector("#inputNumero");
+const select = document.querySelector("#operacao");
+const btnCalcular = document.querySelector("#btnCalcular");
+const result = document.querySelector("#result")
 
 let operacao;
-let etapa = 1;
 let numero1;
 let numero2;
 
-console.log("Antes do evento");
+btnCalcular.addEventListener("click", function () {
 
-btnMenu.addEventListener("click", function () {
-    console.log("Clique detectado!");
-    const valor = inputMenu.value;
+    const numero1 = Number(inputNumero1.value);
+    const numero2 = Number(inputNumero2.value)
+    const operacao = select.value;
 
-    if (valor >= 1 && valor <= 4) {
-        operacao = Number(valor);
-        menu.style.display = "none";
-        containerInput.style.display = "none";
-        calculadora.style.display = "block";
-        instrucao.textContent = "Digite o primeiro número:";
-        inputNumero.placeholder = "Insira um número";
-    } else {
-        alert("Digite um número válido!");
-    }
-});
+    
+    let resultado;
 
-btnAcao.addEventListener("click", function () {
-    const valor = inputNumero.value;
-
-    if (etapa === 1) {
-        numero1 = Number(valor);
-        instrucao.textContent = "Digite o segundo número:";
-        inputNumero.placeholder = "Insira um número";
-        etapa = 2;
-    } else if (etapa === 2) {
-        numero2 = Number(valor);
-        let resultado;
-
-    if (operacao === 1) {
+    if (operacao === "adicao") {
         resultado = numero1 + numero2;
-    } else if (operacao === 2) {
+    } else if (operacao === "subtracao") {
         resultado = numero1 - numero2;
-    } else if (operacao === 3) {
+    } else if (operacao === "multiplicacao") {
         resultado = numero1 * numero2;
-    } else if (operacao === 4) {
+    } else if (operacao === "divisao") {
         resultado = numero1 / numero2;
     }
 
-    instrucao.textContent = "Resultado: " + resultado + " | Deseja repetir a operação? (s/n)";
-    inputNumero.placeholder = "Informe se quer repetir";
-    etapa = 3;
-    } else if (etapa === 3) {
-        if (valor.toLowerCase() === "s") {
-            etapa = 1;
-            instrucao.textContent = "Digite o primeiro número:";
-            inputNumero.placeholder = "Insira um número";
-        } else {
-            calculadora.style.display = "none";
-            menu.style.display = "block";
-            containerInput.style.display = "flex";
+    result.textContent = "Resultado :  " + resultado;
 
-            inputMenu.value = "";
-
-            etapa = 1;
-        }
-    }
           inputNumero.value = "";
 });
 
